@@ -2,7 +2,6 @@ package com.tutorial.lifecycle
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.lifecycles.MyChronometer
 import com.tutorial.R
 
 class LifecycleActivity : AppCompatActivity() {

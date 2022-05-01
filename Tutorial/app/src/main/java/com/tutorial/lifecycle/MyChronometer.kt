@@ -1,11 +1,10 @@
-package com.example.lifecycles
+package com.tutorial.lifecycle
 
 import android.content.Context
 import android.os.SystemClock
 import android.util.AttributeSet
 import android.widget.Chronometer
 import androidx.lifecycle.DefaultLifecycleObserver
-import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.LifecycleOwner
 
 class MyChronometer(context: Context?, attrs: AttributeSet?) : Chronometer(context, attrs),
