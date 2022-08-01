@@ -15,9 +15,10 @@ class FragmentDest : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            productId = it.getString(ARG_PRODUCT_ID)
-        }
+        // 从 Bundle 获取参数值，传统方式
+//        arguments?.let {
+//            productId = it.getString(ARG_PRODUCT_ID)
+//        }
     }
 
     override fun onCreateView(
@@ -29,6 +30,10 @@ class FragmentDest : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        // 从 Safe Args 获取参数值
+        arguments?.let {
+            productId = FragmentDestArgs.fromBundle(it).productId
+        }
         view.findViewById<TextView>(R.id.textView).text = "productId = $productId"
     }
 }
