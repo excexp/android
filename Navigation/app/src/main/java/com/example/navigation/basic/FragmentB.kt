@@ -21,7 +21,10 @@ class FragmentB : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         view.findViewById<Button>(R.id.gotoFragmentC).setOnClickListener {
-            findNavController().navigate(R.id.action_fragmentB_to_fragmentC)
+            // 传递参数给 FragmentC
+            val bundle = Bundle()
+            bundle.putString(ARG_PARAM_KEY, "ba la ba la")
+            findNavController().navigate(R.id.action_fragmentB_to_fragmentC, bundle)
         }
     }
 }
