@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/safe_args"
+    app:startDestination="@id/fragmentSafeArgs">
+
+    <fragment
+        android:id="@+id/fragmentSafeArgs"
+        android:name="com.example.navigation.args.FragmentHome"
+        android:label="fragment_safe_args"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_fragmentHome_to_fragmentDest"
+            app:destination="@id/fragmentDest" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentDest"
+        android:name="com.example.navigation.args.FragmentDest"
+        android:label="fragment_dest"
+        tools:layout="@layout/fragment_dest" >
+        <argument
+            android:name="productId"
+            app:argType="string"
+            android:defaultValue="1" />
+    </fragment>
+</navigation>

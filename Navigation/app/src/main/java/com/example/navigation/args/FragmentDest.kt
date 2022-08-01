@@ -1,4 +1,4 @@
-package com.example.navigation.basic
+package com.example.navigation.args
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,16 +8,15 @@ import android.view.ViewGroup
 import android.widget.TextView
 import com.example.navigation.R
 
-const val ARG_PARAM_KEY = "key"
+private const val ARG_PRODUCT_ID = "productId"
 
-class FragmentC : Fragment() {
-
-    private var argParam: String? = null
+class FragmentDest : Fragment() {
+    private var productId: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            argParam = it.getString(ARG_PARAM_KEY)
+            productId = it.getString(ARG_PRODUCT_ID)
         }
     }
 
@@ -25,11 +24,11 @@ class FragmentC : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_c, container, false)
+        return inflater.inflate(R.layout.fragment_dest, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        view.findViewById<TextView>(R.id.textView).text = "Param is $argParam"
+        view.findViewById<TextView>(R.id.textView).text = "productId = $productId"
     }
 }
