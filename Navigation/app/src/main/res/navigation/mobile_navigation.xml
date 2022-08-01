@@ -10,9 +10,20 @@
         android:name="com.example.navigation.basic.FragmentA"
         android:label="fragment_a"
         tools:layout="@layout/fragment_a" >
+
+        <!--
+            enterAnim: 跳转时的目标页面动画
+            exitAnim: 跳转时的原页面动画
+            popEnterAnim: 回退时的目标页面动画
+            popExitAnim: 回退时的原页面动画
+        -->
         <action
             android:id="@+id/action_fragmentA_to_fragmentB"
-            app:destination="@id/fragmentB" />
+            app:destination="@id/fragmentB"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
     <fragment
         android:id="@+id/fragmentB"
