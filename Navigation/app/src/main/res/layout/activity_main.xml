@@ -6,6 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".basic.MainActivity">
 
+    <!--
+    app:defaultNavHost=true 意思是可以拦截系统的返回键，可以理解为默认给fragment实现了返回键的功能，
+    这样在fragment的跳转过程中，当我们按返回键时，就可以使得fragment跟activity一样可以回到上一个页面了
+    否则按返回直接返回到桌面了
+    -->
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView"
         android:name="androidx.navigation.fragment.NavHostFragment"
