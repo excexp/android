@@ -36,7 +36,7 @@ fun BoxPreview() {
             Modifier
                 .background(Color.Green)
                 .size(250.dp),
-            Alignment.BottomStart
+            Alignment.BottomCenter
         ) {
             Box(
                 Modifier
