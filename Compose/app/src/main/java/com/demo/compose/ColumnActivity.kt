@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -29,25 +30,22 @@ class ColumnActivity : ComponentActivity() {
 @Composable
 fun ColumnPreview() {
     Column( Modifier.fillMaxSize() ) {
-        Box(
-            Modifier
-                .fillMaxWidth()
-                .background(Color.Red)
-                .height(100.dp) ) {
+        Surface(
+            color = Color.Red,
+            modifier = Modifier.fillMaxWidth().height(100.dp)
+        ) {
         }
 
-        Box(
-            Modifier
-                .fillMaxWidth()
-                .background(Color.Green)
-                .height(100.dp) ) {
+        Surface(
+            color = Color.Green,
+            modifier = Modifier.fillMaxWidth().height(100.dp)
+        ) {
         }
 
-        Box(
-            Modifier
-                .fillMaxWidth()
-                .background(Color.Blue)
-                .height(100.dp) ) {
+        Surface(
+            color = Color.Blue,
+            modifier = Modifier.fillMaxWidth().height(100.dp)
+        ) {
         }
     }
 }
