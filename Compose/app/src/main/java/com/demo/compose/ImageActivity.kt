@@ -41,9 +41,10 @@ fun ImagePreview() {
             contentDescription = stringResource(id = R.string.app_name)
         )
 
-//        AsyncImage(
-//            model = "https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png",
-//            contentDescription = "Baidu Logo"
-//        )
+        AsyncImage(
+            model = "https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png",
+            contentDescription = "Baidu Logo",
+            modifier = Modifier.fillMaxSize().background(color=Color.Red)
+        )
     }
 }
