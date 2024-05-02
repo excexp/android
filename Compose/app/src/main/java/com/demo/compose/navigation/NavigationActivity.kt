@@ -3,6 +3,8 @@ package com.demo.compose.navigation
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Column
+import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
@@ -21,13 +23,25 @@ class NavigationActivity: ComponentActivity() {
 }
 
 @Composable
-fun Profile() {
-    Text("Profile")
+fun Profile(onNavigateToFriendList: ()->Unit) {
+    Column {
+        Text("Profile")
+
+        Button(onClick = { onNavigateToFriendList() }) {
+            Text("Go to FriendList")
+        }
+    }
 }
 
 @Composable
-fun FriendList() {
-    Text("FriendList")
+fun FriendList( onNavigateToProfile: ()->Unit) {
+    Column {
+        Text("FriendList")
+
+        Button(onClick = { onNavigateToProfile() }) {
+            Text("Go to Profile")
+        }
+    }
 }
 
 @Preview
@@ -36,11 +50,15 @@ fun MyApp() {
     val navController = rememberNavController()
     NavHost(navController = navController, startDestination = "profile") {
         composable("profile") {
-            Profile()
+            Profile(onNavigateToFriendList = {
+                navController.navigate("friendList")
+            })
         }
 
         composable("friendList") {
-            FriendList()
+            FriendList(onNavigateToProfile = {
+                navController.navigate("profile")
+            })
         }
     }
 }
