@@ -54,6 +54,20 @@ fun FriendList(onNavigateToProfile: () -> Unit) {
     }
 }
 
+@Composable
+fun FriendDetail(onNavigateToProfile: () -> Unit) {
+    Column(
+        Modifier
+            .background(Color.Gray)
+            .fillMaxSize()) {
+        Text("Friend Detail")
+
+        Button(onClick = { onNavigateToProfile() }) {
+            Text("Go to Profile")
+        }
+    }
+}
+
 @Preview
 @Composable
 fun MyApp() {
