@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.hilt)
 }
 
 android {
@@ -49,9 +51,12 @@ android {
 }
 
 dependencies {
+    ksp(libs.hilt.android.compiler)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.activity.compose)
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.ui)
@@ -60,10 +65,11 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(libs.coil.kt.compose)
     implementation(libs.androidx.navigation.compose)
+    implementation(libs.hilt.android)
+    implementation(libs.hilt.navigation.compose)
 //    implementation(libs.androidx.appcompat)
 //    implementation(libs.material)
 //    implementation(libs.androidx.activity)
 
     debugImplementation(libs.androidx.ui.tooling)
-//    debugImplementation(libs.androidx.ui.test.manifest)
 }
