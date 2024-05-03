@@ -12,7 +12,7 @@
         android:theme="@style/Theme.Compose"
         tools:targetApi="31">
         <activity
-            android:name=".navigation.GardenActivity"
+            android:name=".ConstraintLayoutActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.Compose">
@@ -23,6 +23,7 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".navigation.GardenActivity" />
         <activity android:name=".TextFieldActivity" />
         <activity android:name=".navigation.NavigationActivity" />
         <!--        <activity android:name=".MainActivity" />-->
