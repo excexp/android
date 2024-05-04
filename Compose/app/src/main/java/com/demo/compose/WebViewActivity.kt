@@ -27,8 +27,8 @@ class WebViewActivity : ComponentActivity() {
         setContent {
             ComposeTheme {
 //                WebViewScreen("https://weibo.com")
-//                WebViewClientScreen("https://www.163.com/")
-                WebChromeClientScreen(activity = this, url = "https://m.weibo.com")
+                WebViewClientScreen("https://weibo.com")
+//                WebChromeClientScreen(activity = this, url = "https://m.weibo.com")
             }
         }
     }
@@ -73,11 +73,28 @@ fun WebViewClientScreen(
 }
 
 class CustomWebViewClient: WebViewClient(){
+
+    /**
+     * shouldoverrideurlloading
+     * will be called when the WebView changes it's URL,
+     * when user clicks on the link in the WebView, or the redirect happens.
+     */
     override fun shouldOverrideUrlLoading(view: WebView?, request: WebResourceRequest?): Boolean {
         Log.e("COMPOSE", "request url = " + request?.url.toString())
-        if(request?.url != null && request?.url.toString().startsWith("https://www.163.com")){
+        if(request?.url != null && request?.url.toString().contains("weibo.cn")){
             Log.e("COMPOSE", "override url to news.163.com")
             view?.loadUrl("https://news.163.com")
+            return true
+        }
+        return false
+    }
+
+    override fun shouldOverrideUrlLoading(view: WebView, url: String): Boolean {
+        Log.e("COMPOSE", "request url = $url")
+        if (url.contains("weibo.cn")) {
+            // DO YOUR WORK
+            // ...
+            // ...
             return true
         }
         return false
