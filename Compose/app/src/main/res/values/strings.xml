@@ -2,5 +2,6 @@
     <string name="app_name">Compose</string>
 
     <string name="share_text_plant">Check out the %s plant in the Android Sunflower app</string>
-
+    <string name="feathertop_content_description">A view of sunrise from Mount Feathertop, Victoria.</string>
+    <string name="title_activity_web_view">WebViewActivity</string>
 </resources>
